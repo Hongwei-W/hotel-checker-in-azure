@@ -1,3 +1,21 @@
+## Update
+There are three steps to make a container app run in azure function
+1. docker build and push to ACR (next section step 2)
+2. create a container app which use the image in ACR
+3. create a function app that use the image in ACR and use container app environment
+
+When updating an container or its code, do the following as [documented](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools%2Cacr%2Cazure-cli2%2Cazure-cli&pivots=azure-functions#update-an-image-in-the-registry) here
+1. Push the changes to ACR\
+  `az acr build --registry <REGISTRY_NAME> --image <LOGIN_SERVER>/azurefunctionsimage:v1.0.1 .`\
+Replace <REGISTRY_NAME> with your Container Registry instance and <LOGIN_SERVER> with the login server name.
+2. Stop and Start the Container APP
+3. In Function App, configuration, reapply the image configuration
+
+### More Links
+[Create your first containerized functions on Azure Container Apps](https://learn.microsoft.com/en-us/azure/azure-functions/functions-deploy-container-apps?tabs=acr%2Cbash&pivots=programming-language-python)
+
+[Working with containers and Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools%2Cacr%2Cazure-cli2%2Cazure-cli&pivots=azure-functions#update-an-image-in-the-registry)
+
 ## Azure Function in Python running selenium webdriver using a custom docker image
 The base Azure Function image does not contain the necessary chromium packages to run selenium webdriver. This project creates a custom docker image with the required libraries such that it can be run as Azure Function.
 
