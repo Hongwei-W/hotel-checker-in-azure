@@ -1,3 +1,4 @@
+# from datetime import datetime
 import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -7,6 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
 from TimeTrigger.hotel import HotelRate
+# from TimeTrigger.selenium_debug import SeleniumWithAzureBlob
 from TimeTrigger.utils.selenium_utils import random_sleep, scroll_to_the_bottom
 
 # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
@@ -17,6 +19,7 @@ class Search:
     """
     def __init__(self, hotel):
         self.hotel = hotel
+        # self.blob_client = blob_client
 
         self.tasks = self.hotel.urls.values() # a list of HotelUrl objects
     
@@ -46,9 +49,14 @@ class Search:
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument("--window-size=1920,1080")
+        user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
+        chrome_options.add_argument(f'user-agent={user_agent}')
 
         service = Service(executable_path="/usr/local/bin/chromedriver")
         driver = webdriver.Chrome(service=service, options=chrome_options)
+        
+        # selenium_debug = SeleniumWithAzureBlob(driver, self.blob_client, "selenium-debug")
         
         driver.get(task.url)
         scroll_to_the_bottom(driver)
@@ -60,6 +68,9 @@ class Search:
 
             if not waited:
                 WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, f"//div[@aria-label='{date.strftime('%a %b %d %Y')}']")))
+                # selenium_debug.save_screenshot(f"/tmp/{datetime.now()}_{self.hotel.name}_{date.strftime('%Y-%m-%d')}.png")
+                # selenium_debug.save_html(f"/tmp/{datetime.now()}_{self.hotel.name}_{date.strftime('%Y-%m-%d')}.html")
+                # selenium_debug.save_page_source(f"/tmp/{datetime.now()}_{self.hotel.name}_{date.strftime('%Y-%m-%d')}.txt")
                 waited = True
             e = driver.find_element(by=By.XPATH, value=f"//div[@aria-label='{date.strftime('%a %b %d %Y')}']")
             price = e.find_element(by=By.CLASS_NAME, value='price-section').text
