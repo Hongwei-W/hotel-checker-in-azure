@@ -9,13 +9,13 @@ from TimeTrigger.search import Search
 from TimeTrigger.search_info import SearchInfo
 
 
-PUSHOVER_APP_TOKEN = os.environ.get('PushoverAppToken')
-PUSHOVER_USER_GROUP = os.environ.get('PushoverUserGroup')
+PUSHOVER_APP_TOKEN = os.environ.get('pushover-app-token')
+PUSHOVER_USER_GROUP = os.environ.get('pushover-user-group')
 
-COSMOSDB_ENDPOINT = os.environ.get('CosmosDBEndpoint')
-COSMOSDB_KEY = os.environ.get('CosmosDBKey')
+COSMOSDB_ENDPOINT = os.environ.get('cosmosdb-endpoint')
+COSMOSDB_KEY = os.environ.get('cosmosdb-key')
 
-@app.blob_input(arg_name="searchhotels", path='search-hotels/search_hotels.json', connection='AzureWebJobsStorage')
+@app.blob_input(arg_name="searchhotels", path='search-hotels/search_hotels.json', connection='azure-web-jobs-storage')
 @app.schedule(schedule="0 0 */3 * * *", arg_name="myTimer", run_on_startup=True,
               use_monitor=False) 
 def main(myTimer: func.TimerRequest, searchhotels:str) -> None:
