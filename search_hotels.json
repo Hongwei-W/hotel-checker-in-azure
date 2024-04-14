@@ -1,0 +1,161 @@
+[
+    {
+        "tripName": "Japan",
+        "hotels": [
+            {
+                "hotelName": "Osaka Marriott Miyako Hotel",
+                "hotelCode": "OSAMC",
+                "dates": [
+                    {
+                        "ciDate": "2024-06-01",
+                        "coDate": "2024-06-11"
+                    }
+                ],
+                "rates": [
+                    "sap",
+                    "points"
+                ]
+            },
+            {
+                "hotelName": "HOTEL THE MITSUI KYOTO, a Luxury Collection Hotel & Spa",
+                "hotelCode": "OSALC",
+                "dates": [
+                    {
+                        "ciDate": "2024-06-01",
+                        "coDate": "2024-06-11"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            }
+        ]
+    },
+    {
+        "tripName": "Nanaimo",
+        "hotels": [
+            {
+                "hotelName": "Courtyard Nanaimo",
+                "hotelCode": "YCDCY",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-08",
+                        "coDate": "2024-10-10"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            }
+        ]
+    },
+    {
+        "tripName": "Vancouver",
+        "hotels": [
+            {
+                "hotelName": "Vancouver Marriott Pinnacle Downtown Hotel",
+                "hotelCode": "YVRDT",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-10",
+                        "coDate": "2024-10-15"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            },
+            {
+                "hotelName": "Delta Hotels by Marriott Vancouver Downtown Suites",
+                "hotelCode": "YVRDV",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-10",
+                        "coDate": "2024-10-15"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            },
+            {
+                "hotelName": "JW Marriott Parq Vancouver",
+                "hotelCode": "YVRJW",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-10",
+                        "coDate": "2024-10-15"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            },
+            {
+                "hotelName": "The Westin Bayshore, Vancouver",
+                "hotelCode": "YVRWI",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-10",
+                        "coDate": "2024-10-15"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            },
+            {
+                "hotelName": "The Douglas, Autograph Collection",
+                "hotelCode": "YVRPS",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-10",
+                        "coDate": "2024-10-15"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            },
+            {
+                "hotelName": "Sheraton Vancouver Airport Hotel",
+                "hotelCode": "YVRVS",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-10",
+                        "coDate": "2024-10-15"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            },
+            {
+                "hotelName": "The Westin Wall Centre, Vancouver Airport",
+                "hotelCode": "YVRWC",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-10",
+                        "coDate": "2024-10-15"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            },
+            {
+                "hotelName": "Vancouver Airport Marriott Hotel",
+                "hotelCode": "YVRSA",
+                "dates": [
+                    {
+                        "ciDate": "2024-10-10",
+                        "coDate": "2024-10-15"
+                    }
+                ],
+                "rates": [
+                    "sap"
+                ]
+            }
+        ]
+    }
+]
